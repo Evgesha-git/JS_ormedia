@@ -1,0 +1,10 @@
+#js1, #js2{
+	border: 1px solid;
+	width: 30px;
+	height: 22px;
+	text-align: center;
+}
+span{
+	font-size: 18px;
+	color: #727272;
+}
