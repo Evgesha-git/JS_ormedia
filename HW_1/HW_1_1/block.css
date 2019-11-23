@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 section{
 	display: flex;
 	justify-content: center;
@@ -68,3 +69,75 @@ nav{
 	order: -1;
 }
 
+=======
+section{
+	display: flex;
+	justify-content: center;
+}
+
+.button{
+	border: 1px solid;
+	background-color: #a9a9a9;
+	margin: 14px;
+	padding: 2px 5px;
+}
+
+.button:hover{
+	border-color: #0b13b7;
+	cursor: pointer;
+}
+
+body{
+	display: flex;
+	font-size: 10px;
+	flex-direction: column;
+}
+
+header, footer{
+	background-color: #a89494;
+	font-size: 16px;
+	display: flex;
+	justify-content: center;
+}
+
+header>span, footer>span{
+	color: #00a1ff;
+}
+
+main{
+	display: flex;
+	flex-direction: row;
+}
+
+article{
+	flex-grow: 2;
+	flex-basis: 70em;
+	flex-direction: column;
+	background-color: #fff7a3;
+}
+
+
+article>h1{
+	font-size: 20px;
+	text-align: center;
+}
+
+article>span{
+	font-size: 14px;
+}
+
+nav, aside{
+	display: flex;
+	flex-grow: 1;
+	background-color: #efeded;
+	font-size: 16px;
+	color: #c5a1d1;
+	align-items: center;
+}
+
+
+nav{
+	order: -1;
+}
+
+>>>>>>> fd8e9ae42f5da23eedf81172442184b4e3b8c53c
