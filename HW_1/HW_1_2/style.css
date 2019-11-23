@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #js1, #js2{
 	border: 1px solid;
 	width: 30px;
@@ -8,3 +9,15 @@ span{
 	font-size: 18px;
 	color: #727272;
 }
+=======
+#js1, #js2{
+	border: 1px solid;
+	width: 30px;
+	height: 22px;
+	text-align: center;
+}
+span{
+	font-size: 18px;
+	color: #727272;
+}
+>>>>>>> 4c1f9c5cc620490030b4f8e6f074d3d292b44ab0

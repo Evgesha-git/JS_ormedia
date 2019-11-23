@@ -20,7 +20,7 @@ redir.onclick = function (){
 
 function styleCng() {
 	var bl = document.getElementById("s_style");
-	//var dv = document.getElementByName("button");
+	//var dv = document.getElementByClassName("button");
 	bl.style.flexDirection = "column";
 	//dv.style.width = "50px";
 }
