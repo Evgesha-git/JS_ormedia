@@ -1,0 +1,82 @@
+body {
+	display: flex;
+	justify-content: center;
+}
+
+h1{
+	align-self: center;
+	border: 1px solid;
+	padding: 10px 100px;
+	background-color: #f7ee9b;
+	border-radius: 4px;
+	margin-left: 0;
+}
+#to-do{
+	display: flex;
+	flex-direction: column;
+	background-color: #00ff9f38;
+	width: 450px;
+	border-radius: 4px;
+}
+
+.textInt, .textD{
+	align-self: center;
+	font-size: 20px;
+	margin: 15px;
+}
+
+.inputsDiv{
+	flex-direction: column;
+	display: flex;
+	border-bottom: 1px solid;
+	padding: 0 0 10px 0;
+}
+
+
+input{
+	width: 300px;
+	height: 30px;
+	font-size: 18px;
+	align-self: center;
+	text-align: end;
+	border-radius: 4px;
+}
+
+li{
+	margin: 15px 0;
+	font-size: 18px;
+	list-style-type: none;
+}
+
+i{
+	cursor: pointer;
+}
+
+#button{
+	flex-direction: row;
+	display: flex;
+	justify-content: space-between;
+}
+
+button{
+	cursor: pointer;
+	margin: 0 0 10px 10px;
+	padding: 7px 10px;
+	background-color: #ff01ef82;
+	border: 1px solid;
+	border-color: #2000ff;
+	border-radius: 70px;
+	font-size: 18px;
+}
+
+button:hover{
+	background-color: #00ff005e;
+	border-color: #38ff00;
+	color: #77005f;
+}
+
+button:active{
+	background-color: #ff48004f;
+	border-color: #fffb00;
+	color: #700;
+}
