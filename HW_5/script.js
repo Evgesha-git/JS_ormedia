@@ -87,7 +87,12 @@ function handleOperator(nextOperator, trigonometry) {
 	let radio = document.querySelectorAll(".radio");
 	//вычисление факториала
 	if (nextOperator == 'n!'){
-		result = factorial(inputValue);
+		if(inputValue == 0){
+			result = 1;
+		} else {
+			result = factorial(inputValue);
+		}
+		
 		
 		calculator.displayValue = String(result);
 		calculator.firstOperand = null;

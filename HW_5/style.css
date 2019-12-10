@@ -1,0 +1,127 @@
+button{
+	font-size: 20px;
+	border: 1px solid;
+	border-radius: 60px;
+	padding: 5px 10px;
+	margin: 5px 5px;
+}
+
+.main{
+	display: flex;
+	justify-content: space-around;
+	background-color: #f5fd0136;
+}
+
+.calc_all{
+	font-size: 48px;
+	grid-area: calc_all_grid;
+	border-radius: 10px;
+	text-align: end;
+}
+/* Блок клавиш калькулятора */
+.calc_keys{
+	display: grid;
+	grid-template-columns: 100px 100px 200px;
+	grid-template-rows: auto;
+	grid-template-areas:"trig_grid trig_grid trig_grid"
+						"calc_row_3 calc_row_3 mat_op"
+						"calc_row_2 calc_row_2 mat_op"
+						"calc_row_1 calc_row_1 mat_op"
+						"calc_row_4 calc_row_4 mat_op";
+	grid-area: keys;
+	border-top: 2px solid #0010ff4d;
+	margin: 10px 0 0 0;
+}
+.clear{
+	width: 190px;
+	grid-area: clear_but;
+}
+
+.plus{grid-area: plus;}
+
+.minus{grid-area: minus;}
+
+.times_by{grid-area: times_by;}
+
+.devided_by{grid-area: devided_by;}
+
+.mod{grid-area: mod;}
+
+.factorial{grid-area: factorial;}
+
+.pow{grid-area: pow;}
+
+.equals_to{grid-area: equals_to;}
+
+.row_1{	grid-area: calc_row_1;}
+
+.row_2{	grid-area: calc_row_2;}
+
+.row_3{
+	grid-area: calc_row_3;
+	border-top: 2px solid #000;
+	border-radius: 10px;
+}
+
+.row_4{	grid-area: calc_row_4;}
+
+.row_1, .row_2, .row_3, .row_4{
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.zero{
+	width: 120px;
+}
+
+.doth, .numm{
+	width: 60px;
+}
+
+.matOp{
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-areas:"clear_but ." "plus mod" "minus pow" "times_by factorial" "devided_by equals_to";
+	grid-area: mat_op;
+	border-left: 2px solid #000;
+	border-top: 2px solid #000;
+	border-radius: 10px;
+}
+
+.radio_trig{
+	display: grid;
+	grid-area: radio;
+}
+
+.radio_span{
+	font-size: 20px;
+}
+
+.trig_button{
+	grid-area: trig_but;
+}
+
+.trigano{
+	width: 90px;
+	padding: 5px 1px;
+	margin: 5px 1px;
+}
+/* Клавиши триганометрии */
+.trig{
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+	grid-template-areas: "radio radio trig_but trig_but" "radio radio trig_but trig_but";
+	grid-area: trig_grid;
+}
+
+/* Верстка калькулятора градами, ну или что-то подобное на это */
+.calculator{
+	display: grid;
+	grid-template-columns: 400px;
+	grid-template-rows: auto;
+	grid-template-areas: "calc_all_grid"
+						"keys";
+	border: 2px solid #0010ff4d;
+	border-radius: 10px;
+}

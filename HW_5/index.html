@@ -16,49 +16,84 @@
   <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
   
-
-	<div class="calculator">
+	<div class="main">
+		<div class="calculator">
 	
-	<input type="text" class="calc_all" value="" disabled />
-	
-		<div class="calc_keys">
-			
-			<span><input type="radio" class="radio" name="ugl" value="grad" />Градусы</span>
-			<span><input type="radio" class="radio" name="ugl" value="rad" />Радианы</span>
-			
-			<button type="button" class="operator" value="+">+</button>
-			<button type="button" class="operator" value="-">-</button>
-			<button type="button" class="operator" value="*">*</button>
-			<button type="button" class="operator" value="/">/</button>
-			<button type="button" class="operator" value="%">%</button>
-			<button type="button" class="operator" value="n!">n!</button>
-			<button type="button" class="operator" value="**">x<sup>y</sup></button>
-			<button type="button" class="operator trigano" value="sin">sin</button>
-			<button type="button" class="operator trigano" value="cos">cos</button>
-			<button type="button" class="operator trigano" value="tan">tan</button>
-			<button type="button" class="operator trigano" value="ctg">ctg</button>
-			<button type="button" class="operator" value="C">C</button>
-			
-			<button type="button" value="1">1</button>
-			<button type="button" value="2">2</button>
-			<button type="button" value="3">3</button>
-			<button type="button" value="4">4</button>
-			<button type="button" value="5">5</button>
-			<button type="button" value="6">6</button>
-			<button type="button" value="7">7</button>
-			<button type="button" value="8">8</button>
-			<button type="button" value="9">9</button>
-			<button type="button" value="0">0</button>
-			<button type="button" value=".">.</button>
-			
-			<button type="button" class="equal-sign operator" value="=">=</button>
+		<input type="text" class="calc_all" value="" disabled />
 		
+			<div class="calc_keys">
+				
+				
+				
+				<div class="matOp">
+					
+					<button type="button" class="operator clear" value="C">C</button>
+					
+					<button type="button" class="operator plus" value="+">+</button>
+					
+					<button type="button" class="operator minus" value="-">-</button>
+					
+					<button type="button" class="operator times_by" value="*">*</button>
+					
+					<button type="button" class="operator devided_by" value="/">/</button>
+					
+					<button type="button" class="operator mod" value="%">%</button>
+					
+					<button type="button" class="operator factorial" value="n!">n!</button>
+					
+					<button type="button" class="operator pow" value="**">x<sup>y</sup></button>
+					
+					<button type="button" class="equal-sign operator equals_to" value="=">=</button>
+				</div>
+				
+				<div class="trig">
+					<div class="radio_trig">
+						<span class="radio_span"><input type="radio" class="radio" name="ugl" value="grad" />Градусы</span>
+						<span class="radio_span"><input type="radio" class="radio" name="ugl" value="rad" />Радианы</span>
+					</div>
+					<div class="trig_button">
+						<button type="button" class="operator trigano" value="sin">sin</button>
+						<button type="button" class="operator trigano" value="cos">cos</button>
+						<button type="button" class="operator trigano" value="tan">tan</button>
+						<button type="button" class="operator trigano" value="ctg">ctg</button>
+					</div>
+					
+				</div>
+				
+				
+				<div class="row_1">
+					<button type="button" class="numm" value="1">1</button>
+					<button type="button" class="numm" value="2">2</button>
+					<button type="button" class="numm" value="3">3</button>
+				</div>
+				<div class="row_2">
+					<button type="button" class="numm" value="4">4</button>
+					<button type="button" class="numm" value="5">5</button>
+					<button type="button" class="numm" value="6">6</button>
+				</div>
+				<div class="row_3">
+					<button type="button" class="numm" value="7">7</button>
+					<button type="button" class="numm" value="8">8</button>
+					<button type="button" class="numm" value="9">9</button>
+				</div>
+				<div class="row_4">
+					<button type="button" class="zero" value="0">0</button>
+					<button type="button" class="doth" value=".">.</button>	
+				</div>
+				
+				
+				
+			
+			</div>
 		</div>
 	</div>
+	
+	
 
 
 <script src="./script.js"></script>
