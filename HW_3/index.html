@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>HW_3</title>
+  <meta name="description" content="">
+  <meta name="author" content="chico">
+
+  <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+  <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+
+<body>
+  <div>
+    <div id="info">
+    	<h2>Список ПК</h2>
+    	<form>
+    		<!-- <div class="infoGorizontal">
+    			<div class="infoGorizontalEl strong">Производитель</div>
+    			<div class="infoGorizontalEl strong">Модель</div>
+    			<div class="infoGorizontalEl strong">Тип процессора</div>
+    			<div class="infoGorizontalEl strong">Тип видеокарты</div>
+    			<div class="infoGorizontalEl strong">Объем ОЗУ</div>
+    			<div class="infoGorizontalEl strong">Объем хранилища</div>
+    			<div class="infoGorizontalEl strong">Стоимость</div>
+    		</div> 
+    		<input type="button" id="createPC2" value="Добавть новое устройство">-->
+    	</form>
+    </div>
+    <br />
+    
+    <div id="detailInfo">
+    	<h2>Детальная информация</h2>
+    	<form>
+    		<!-- <div class="detailInfo">
+    			<div class="details">
+    				<div class="elem">Производитель</div>
+    				<div class="elem">Название модели</div>
+    				<div class="elem">Процессор</div>
+    				<div class="elem">Количество ядер</div>
+    				<div class="elem">Объем ОЗУ</div>
+    				<div class="elem">Объем хранилища</div>
+    				<div class="elem">Тип хранилища</div>
+    				<div class="elem">Тип видеокарты</div>
+    				<div class="elem">Модель видеокарты</div>
+    				<div class="elem">Тип устройства</div>
+    				<div class="elem">Цена</div>
+    			</div>
+    		</div>
+    		<input type="button" class="buttons" id="mainMenu2" value="Гланое меню" /> -->
+    	</form>
+    </div>
+    <br />
+    
+    <div id="createNew">
+    	<h2>Редактирование информации</h2>
+    	<form>
+    		<div class="divRadio">
+    			<div><input type="radio" id="radioPC" name="pcTypeRadio" value="PC" />ПК</div>
+    			<div><input type="radio" id="radioLT" name="pcTypeRadio" value="LT" />Ноутбук</div>
+    		</div>
+    		<br />
+	    	<span>Производитель:</span>
+	    	<input type="text" id="mfName" />
+	    	<br />
+	    	<br />
+	    	<span>Модель:</span>
+	    	<input type="text" id="model" />
+	    	<br />
+	    	<br />
+	    	<span>Процессор:</span>
+	    	<input type="text" id="cpu" />
+	    	<br />
+	    	<br />
+	    	<span>Количество ядер:</span>
+	    	<input type="number" id="cores" />
+	    	<br />
+	    	<br />
+	    	<span>Объем ОЗУ:</span>
+	    	<input type="number" id="ram" />
+	    	<br />
+	    	<br />
+	    	<span>Объем хранилища:</span>
+	    	<input type="number" id="driveValue" />
+	    	<br />
+	    	<br />
+	    	<span>Тип хранилища:</span>
+	    	<input type="text" id="driveType" />
+	    	<br />
+	    	<br />
+	    	<span>Тип видеокарты:</span>
+	    	<select name="gpuType" id="gpuType">
+	    		<option value="integrate">Встроенная</option>
+	    		<option value="discret">Дискретная</option>
+	    	</select>
+	    	<br />
+	    	<br />
+	    	<span>Модель видеокарты:</span>
+	    	<input type="text" id="gpuName" />
+	    	<br />
+	    	<br />
+	    	<span>Стоимость:</span>
+	    	<input type="number" id="price" />
+	    	<br />
+	    	<br />
+	    	<input type="button" id="createPC" class="buttons" value="Сохранить запись" />
+	    	<input type="button" id="mainMenu" class="buttons" value="Главное меню" />
+    	</form>
+    </div>
+    
+  </div>
+  
+  <script src="script/main.js"></script>
+  
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
