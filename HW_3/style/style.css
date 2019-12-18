@@ -65,8 +65,9 @@ body > div {
 	grid-template-columns: 200px 200px;
 }
 
-#createNew > form > span, input{
+#createNew > form > span, input, select{
 	margin: 8px 10px;
+	width: auto;
 }
 
 .infoGorizontal{
@@ -79,4 +80,33 @@ body > div {
 .strong{
 	border: 1px solid #000;
 	padding: 6px 10px;
+}
+
+.button{
+	cursor: pointer;
+}
+
+.button:active{
+	cursor: wait;
+}
+
+.buttons{
+	padding: 5px 10px;
+	font-size: 18px;
+	margin: 8px 15px;
+	border-radius: 3px;
+	border: 1px solid;
+	cursor: pointer;
+	background: rgb(64,199,129);
+	box-shadow: 0 -3px rgb(53,167,110) inset;
+}
+
+.buttons:active{
+	cursor: wait;
+	background:rgb(77, 210, 144);
+	box-shadow: 0 3px rgb(33,147,90) inset;
+}
+
+.buttons:hover{
+	background: rgb(53, 167, 110);
 }

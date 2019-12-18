@@ -25,7 +25,17 @@ function deletePc(i, arrPc){
 
 function printDetailsInfo(i){
 	let form = document.getElementById("detailInfo").getElementsByTagName("form");
-	//form[0].innerHTML = '<br/ >';
+	let typePc;
+	
+	switch(arrPc[i].type){
+		case "PC":
+		typePc = "Персональный компьютер";
+		break;
+		case "LT":
+		typePc = "Ноутбук";
+		break;
+	}
+	form[0].innerHTML = "";
 	form[0].innerHTML += '<div class="details1">'+
     				'<div class="elem">Производитель</div>'+
     				'<div class="elem">Название модели</div>'+
@@ -49,7 +59,7 @@ function printDetailsInfo(i){
     				'<div class="elem">'+arrPc[i].driveType+'</div>'+
     				'<div class="elem">'+arrPc[i].gpuType+'</div>'+
     				'<div class="elem">'+arrPc[i].gpuName+'</div>'+
-    				'<div class="elem">'+arrPc[i].type+'</div>'+
+    				'<div class="elem">'+typePc+'</div>'+
     				'<div class="elem">'+arrPc[i].price+'</div>'+
     			'</div>'+
     			'</div>'+
