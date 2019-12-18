@@ -2,8 +2,8 @@
  * @author chico
  */
 
-function editPC(i){
-	display(createNew);
+function editPc(i){
+	display("createNew");
 	document.getElementById("mfName").value =  arrPc[i].mfName;
 	document.getElementById("model").value = arrPc[i].pcModName;
 	document.getElementById("cpu").value = arrPc[i].cpu;
@@ -25,8 +25,8 @@ function deletePc(i, arrPc){
 
 function printDetailsInfo(i){
 	let form = document.getElementById("detailInfo").getElementsByTagName("form");
-	form[0].innerHTML = '<bt/ >';
-	form[0].innerHTML += '<div class="details">'+
+	//form[0].innerHTML = '<br/ >';
+	form[0].innerHTML += '<div class="details1">'+
     				'<div class="elem">Производитель</div>'+
     				'<div class="elem">Название модели</div>'+
     				'<div class="elem">Процессор</div>'+
@@ -39,7 +39,7 @@ function printDetailsInfo(i){
     				'<div class="elem">Тип устройства</div>'+
     				'<div class="elem">Цена</div>'+
     			'</div>'+
-    			'<div class="details">'+
+    			'<div class="details2">'+
     				'<div class="elem">'+arrPc[i].mfName+'</div>'+
     				'<div class="elem">'+arrPc[i].pcModName+'</div>'+
     				'<div class="elem">'+arrPc[i].cpu+'</div>'+
@@ -54,6 +54,8 @@ function printDetailsInfo(i){
     			'</div>'+
     			'</div>'+
     			'<input type="button" class="buttons" id="mainMenu2" value="Гланое меню" />';
+    			
+    			display("detailInfo");
     			
     			document.getElementById("mainMenu2").addEventListener("click", function(){
     				display("info");
@@ -71,26 +73,25 @@ function printInfo(arrPc){
     			'<div class="infoGorizontalEl strong">Объем ОЗУ</div>'+
     			'<div class="infoGorizontalEl strong">Объем хранилища</div>'+
     			'<div class="infoGorizontalEl strong">Стоимость</div>'+
-    		'</div>'+
-    		'<input type="button" id="createPC2" value="Добавть новое устройство">';
+    		'</div>';
 	
-	for(let i=0; i<arrPc.lenght; i++){
+	for(let i=0; i<arrPc.length; i++){
 		form[0].innerHTML +='<div class="infoGorizontal">'+
-    			'<div class="infoGorizontalEl strong">'+arrPc[i].mfName+'</div>'+
+    			'<div class="infoGorizontalEl strong button" id="details'+i+'">'+arrPc[i].mfName+'</div>'+
     			'<div class="infoGorizontalEl strong">'+arrPc[i].pcModName+'</div>'+
     			'<div class="infoGorizontalEl strong">'+arrPc[i].cpu+'</div>'+
     			'<div class="infoGorizontalEl strong">'+arrPc[i].gpuType+'</div>'+
     			'<div class="infoGorizontalEl strong">'+arrPc[i].ram+'</div>'+
     			'<div class="infoGorizontalEl strong">'+arrPc[i].driveValue+'</div>'+
     			'<div class="infoGorizontalEl strong">'+arrPc[i].price+'</div>'+
-    			'<div class="infoGorizontalEl strong" id="edit'+i+'">Редактировать</div>'+
-    			'<div class="infoGorizontalEl strong" id="remove'+i+'">Удалить</div>'+
+    			'<div class="infoGorizontalEl strong button" id="edit'+i+'">Редактировать</div>'+
+    			'<div class="infoGorizontalEl strong button" id="remove'+i+'">Удалить</div>'+
     		'</div>'
 	}
 	form[0].innerHTML+='<br>'+
   '<input type="button" id="newPcButton" class="buttons" value="Добавить новую запись">';
   
-  for(let i=0; i<arrPc.lenght; i++){
+  for(let i=0; i<arrPc.length; i++){
   	let edit = 'edit'+i;
   	let remove = 'remove'+i;
   	let details = 'details'+i;
@@ -99,7 +100,7 @@ function printInfo(arrPc){
     document.getElementById(details).style.color="green";
     
     document.getElementById(details).addEventListener("click",function(){
-      printDetailedInfo(i,arrPc);
+      printDetailsInfo(i,arrPc);
       display("detailedInfo");
     });
     
@@ -149,14 +150,16 @@ class BaseClassPC{
 		this.cores = cores;
 		this.ram = ram;
 		this.driveValue = driveValue;
+		this.price = price;
 	};
 	
 	get mfName(){
 		return this._mfName;
 	};
 	set mfName(value){
-		if(value.lenght == 0){
+		if(value.length == 0){
 			alert("Заполните поле производителя");
+			return;
 		} else {
 			this._mfName = value;
 		};
@@ -166,8 +169,9 @@ class BaseClassPC{
 		return this._pcModName;
 	};
 	set pcModName(value){
-		if(value.lenght == 0){
+		if(value.length == 0){
 			alert("Заполните поле модели");
+			return;
 		} else {
 			this._pcModName = value;
 		};
@@ -177,8 +181,9 @@ class BaseClassPC{
 		return this._cpu;
 	};
 	set cpu(value){
-		if(value.lenght == 0){
+		if(value.length == 0){
 			alert("Заполните поле процессор");
+			return;
 		} else {
 			this._cpu = value;
 		};
@@ -188,8 +193,9 @@ class BaseClassPC{
 		return this._cores;
 	};
 	set cores(value){
-		if(value.lenght == 0){
+		if(value.length == 0){
 			alert("Укажите число ядер");
+			return;
 		} else {
 			this._cores = value;
 		};
@@ -199,8 +205,9 @@ class BaseClassPC{
 		return this._ram;
 	};
 	set ram(value){
-		if(value.lenght == 0){
+		if(value.length == 0){
 			alert("Укажите объем оперативной памяти");
+			return;
 		} else {
 			this._ram = value;
 		};
@@ -210,10 +217,22 @@ class BaseClassPC{
 		return this._driveValue;
 	};
 	set driveValue(value){
-		if(value.lenght == 0){
+		if(value.length == 0){
 			alert("Укажите объем накопителя");
+			return;
 		} else {
 			this._driveValue = value;
+		};
+	};
+	get price(){
+		return this._price;
+	};
+	set price(value){
+		if(value.length == 0){
+			alert("Укажите цену");
+			return;
+		} else {
+			this._price = value;
 		};
 	};
 	
@@ -232,8 +251,9 @@ class ProtoClassPC extends BaseClassPC{
 		return this._driveType;
 	};
 	set driveType(value){
-		if(value.lenght == 0){
+		if(value.length == 0){
 			alert("Заполните поле типа никопителя");
+			return;
 		} else {
 			this._driveType = value;
 		};
@@ -243,8 +263,9 @@ class ProtoClassPC extends BaseClassPC{
 		return this._gpuType;
 	};
 	set gpuType(value){
-		if(value.lenght == 0){
+		if(value.length == 0){
 			alert("Заполните поле типа графического процессора");
+			return;
 		} else {
 			this._gpuType = value;
 		};
@@ -254,8 +275,9 @@ class ProtoClassPC extends BaseClassPC{
 		return this._gpuName;
 	};
 	set gpuName(value){
-		if(value.lenght == 0){
+		if(value.length == 0){
 			alert("Заполните поле названия графического процессора");
+			return;
 		} else {
 			this._gpuName = value;
 		};
@@ -275,8 +297,9 @@ class ProtoClassLT extends BaseClassPC{
 		return this._driveType;
 	};
 	set driveType(value){
-		if(value.lenght == 0){
+		if(value.length == 0){
 			alert("Заполните поле типа никопителя");
+			return;
 		} else {
 			this._driveType = value;
 		};
@@ -286,8 +309,9 @@ class ProtoClassLT extends BaseClassPC{
 		return this._gpuType;
 	};
 	set gpuType(value){
-		if(value.lenght == 0){
+		if(value.length == 0){
 			alert("Заполните поле типа графического процессора");
+			return;
 		} else {
 			this._gpuType = value;
 		};
@@ -297,8 +321,9 @@ class ProtoClassLT extends BaseClassPC{
 		return this._gpuName;
 	};
 	set gpuName(value){
-		if(value.lenght == 0){
+		if(value.length == 0){
 			alert("Заполните поле названия графического процессора");
+			return;
 		} else {
 			this._gpuName = value;
 		};
@@ -307,7 +332,7 @@ class ProtoClassLT extends BaseClassPC{
 
 function checkRadio(){
 	let radio = document.getElementsByName('pcTypeRadio');
-	for(let i=0; i<radio.lenght; i++){
+	for(let i=0; i<radio.length; i++){
 		if(radio[i].checked){
 			return(radio[i].value);
 		};
@@ -354,5 +379,6 @@ document.getElementById("createPC").addEventListener("click", function(){
 });
 
 document.getElementById("mainMenu").addEventListener("click", function(){
+	printInfo(arrPc);
 	display("info");
 })

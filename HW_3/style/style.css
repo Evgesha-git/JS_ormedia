@@ -1,0 +1,82 @@
+body{
+	background: #97ff0036;
+}
+
+body > div {
+	display: flex;
+	flex-direction: column;
+}
+
+#info{
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid;
+	margin: 40px 10px 0 0;
+}
+
+#detailInfo{
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+}
+
+#detailInfo > form {
+	display: grid;
+	grid-template-columns: 150px 150px;
+	grid-template-rows: auto auto;
+	grid-template-areas: "detail1 detail2"
+						"button button";
+}
+
+.details1 {
+	margin: 8px 0 8px 5px;
+	grid-area: detail1;
+} 
+
+.details2{
+	margin: 8px 5px 8px 0;
+	grid-area: detail2;
+}
+
+.elem{
+	margin: 0 0 5px 0;
+	border: 1px solid;
+	height: 40px;
+	padding: 5px 4px 0 8px;
+	
+}
+
+#mainMenu2{
+	grid-area: button;
+}
+
+#createNew{
+	display: flex;
+	align-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#createNew > form{
+	display: grid;
+	grid-template-columns: 200px 200px;
+}
+
+#createNew > form > span, input{
+	margin: 8px 10px;
+}
+
+.infoGorizontal{
+	display: grid;
+	flex-direction: row;
+	grid-template-columns: 140px 140px 140px 140px 140px 140px 140px 140px 140px;
+	margin: 5px 10px;
+}
+
+.strong{
+	border: 1px solid #000;
+	padding: 6px 10px;
+}
