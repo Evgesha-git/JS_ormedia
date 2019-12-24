@@ -391,4 +391,4 @@ document.getElementById("createPC").addEventListener("click", function(){
 document.getElementById("mainMenu").addEventListener("click", function(){
 	printInfo(arrPc);
 	display("info");
-})
+});
