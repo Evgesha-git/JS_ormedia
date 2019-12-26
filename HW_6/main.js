@@ -4,47 +4,74 @@
 
 let tablo = {
     'creatorView':`
-    <select name="typeTrans" id="typeTrans">
-            <option value="train">Поезд</option>
-            <option value="bus">Автобус</option>
-            <option value="taxi">Такси</option>
-            <option value="pashiy">Пеший поход</option>
-            <option value="horse">Лошадь</option>
-        </select>
-        <input type="date" id="date" />
-        <select name="routes" id="routes">
-            <option value="Brest">Брест</option>
-            <option value="Mohilev">Могилев</option>
-            <option value="Vitebsk">Витебск</option>
-            <option value="Borisov">Борисов</option>
-            <option value="Moskva">Москва</option>
-            <option value="Piter">Санкт-Питербург</option>
-            <option value="Kiev">Киев</option>
-            <option value="Grodna">Гродно</option>
-        </select>
-        <input type="time" id="timeToStart" />
-        <input type="time" id="timeToEnd" />
-        <input type="number" id="price" />
-        <div>
-            <input type="button" id="addToRout" value="Добавить путь"/>
-            <input type="button" id="star" value="Добавить в избранное"/>
-            <input type="button" id="save" value="Сохраньть данные"/>
-        </div>`,
+    <!--<div class="descript">-->
+        <span class="item_a_a">Транспорт</span>
+        <span class="item_b_a">Дата отправления</span>
+        <span class="item_c_a">Город прибытия</span>
+        <span class="item_d_a">Время отправления</span>
+        <span class="item_e_a">Время прибытия</span>
+        <span class="item_f_a">Цена проезда</span>
+     <!--</div>-->
+     <!--<div class="createRoute">-->
+        <select name="typeTrans" class="select item_a_b" id="typeTrans">
+                <option value="train">Поезд</option>
+                <option value="bus">Автобус</option>
+                <option value="taxi">Такси</option>
+                <option value="pashiy">Пеший поход</option>
+                <option value="horse">Лошадь</option>
+            </select>
+            <input type="date" class="date item_b_b" id="date" />
+            <select name="routes" class="select item_c_b" id="routes">
+                <option value="Brest">Брест</option>
+                <option value="Mohilev">Могилев</option>
+                <option value="Vitebsk">Витебск</option>
+                <option value="Borisov">Борисов</option>
+                <option value="Moskva">Москва</option>
+                <option value="Piter">Санкт-Питербург</option>
+                <option value="Kiev">Киев</option>
+                <option value="Grodna">Гродно</option>
+            </select>
+            <input type="time" class="time item_d_b" id="timeToStart" />
+            <input type="time" class="time item_e_b" id="timeToEnd" />
+            <input type="number" class="price item_f_b" id="price" />
+            <div class="item_h_b"><input type="checkbox" id="star" class="starChck"/><label for="star" class="css-label dark-plus-orange">Добавить в избранное</label></div>
+            <div class="item_g_b">
+                <input type="button" id="addToRout" class="buttons" value="Добавить путь"/>
+                <!--<input type="button" id="star" value="Добавить в избранное"/>-->
+                <input type="button" id="save" class="buttons" value="Сохраньть данные"/>
+            </div>
+         </div>`,
         
         'tabloView':(arr)=>{
             
-            let arrResult = '';
+            let arrResult = `<br />
+                <div class="routeBlock">
+                    <div class="route"><span>Избранное</span></div>
+                    <div class="route"><span>Транспорт</span></div>
+                    <div class="route"><span>Дата отправления</span></div>
+                    <div class="route"><span>Место прибытия</span></div>
+                    <div class="route"><span>Время отправления</span></div>
+                    <div class="route"><span>Время прибытия</span></div>
+                    <div class="route"><span>Стоимость</span></div>
+                    <div class="route"><span>Удалить маршрут</span></div>
+                </div>`;
+            
             for(let i = 0; i < arr.length ; i++){
-                arrResult += `<br />
+                let fav;
+                if(arr[i]._star == true){
+                    fav = "checked"
+                }
+                arrResult += `<!--<br />-->
+                
                 <div id="routeId${i}" class="routeBlock">
+                    <div class="route star"><input id="star" class="starChck" type="checkbox" ${fav}/><label  class="css-label dark-plus-orange"></slabel></div>
                     <div class="route"><span>${arr[i]._typeTrans}</span></div>
                     <div class="route"><span>${arr[i]._date}</span></div>
                     <div class="route"><span>${arr[i]._routes}</span></div>
                     <div class="route"><span>${arr[i]._timeToStart}</span></div>
                     <div class="route"><span>${arr[i]._timeToEnd}</span></div>
                     <div class="route"><span>${arr[i]._price}</span></div>
-                    <div class="route star"><span>${arr[i]._star}</span></div>  
-                    <div class="route"><button id="delBtn${i}">Delete</button></div>
+                    <div class="route"><button id="delBtn${i}" class="buttonsDel">Удалить</button></div>
                 </div>`  
             }
             return arrResult;
@@ -77,8 +104,8 @@ let tablo = {
             timeToStart = document.getElementById("timeToStart").value;
             timeToEnd = document.getElementById("timeToEnd").value;
             price = document.getElementById("price").value;
-            //star = document.getElementById("star").value;
-            tablo.dataArr[tablo.dataArr.length] = new Routes(typeTrans, date, routes, timeToStart, timeToEnd, price, true);
+            star = document.getElementById("star").checked;
+            tablo.dataArr[tablo.dataArr.length] = new Routes(typeTrans, date, routes, timeToStart, timeToEnd, price, star);
             if(!(typeTrans && date && routes && timeToStart && timeToEnd && price)){
                 tablo.dataArr.splice([tablo.datArr.length-1],1);
             };
@@ -105,7 +132,7 @@ class Routes{
         this.timeToStart = timeToStart;
         this.timeToEnd = timeToEnd;
         this.price = price;
-        this.star = false;
+        this.star = star;
     };
     
     get typeTrans(){
