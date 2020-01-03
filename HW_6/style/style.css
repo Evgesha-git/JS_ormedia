@@ -28,6 +28,11 @@ body {
 	padding: 5px;
 }
 
+.icon{
+	background: #80808036;
+	width: 20%;
+}
+
 .newRoute{
 	display: grid;
 	align-items: center;

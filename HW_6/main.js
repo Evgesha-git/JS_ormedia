@@ -45,7 +45,7 @@ let tablo = {
                 <option value="horse">Лошадь</option>
             </select>
             <input type="date" class="date item_b_b" id="date" />
-            <select name="routes" class="select item_c_b" id="routes">
+            <!--/*<select name="routes" class="select item_c_b" id="routes">
                 <option value="Brest">Брест</option>
                 <option value="Mohilev">Могилев</option>
                 <option value="Vitebsk">Витебск</option>
@@ -54,7 +54,8 @@ let tablo = {
                 <option value="Piter">Санкт-Питербург</option>
                 <option value="Kiev">Киев</option>
                 <option value="Grodna">Гродно</option>
-            </select>
+            </select>*/-->
+            <input type="text" class="select item_c_b" id="routes" />
             <input type="time" class="time item_d_b" id="timeToStart" />
             <input type="time" class="time item_e_b" id="timeToEnd" />
             <input type="number" class="price item_f_b" id="price" />
@@ -126,8 +127,9 @@ let tablo = {
             let nType = document.getElementById("typeTrans").options.selectedIndex;
             typeTrans = document.getElementById("typeTrans").options[nType].text;
             date = document.getElementById("date").value;
-            let nRoute = document.getElementById("routes").options.selectedIndex;
-            routes = document.getElementById("routes").options[nRoute].text;
+            /*let nRoute = document.getElementById("routes").options.selectedIndex;
+            routes = document.getElementById("routes").options[nRoute].text;*/
+            routes = document.getElementById("routes").value;
             timeToStart = document.getElementById("timeToStart").value;
             timeToEnd = document.getElementById("timeToEnd").value;
             price = document.getElementById("price").value;
