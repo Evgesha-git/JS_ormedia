@@ -1,7 +1,26 @@
+//import * as wether from './script/weather.js'
+
 /**
  * @author chico
  */
-
+//типо модуль
+let div = "";
+function weatherBalloon( cityID ) {
+    let key = "8643e5fa4d67cb1ad3c160e1d6c66d90";
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + cityID+ '&appid=' + key + '&lang=ru&units=metric')  
+    .then(function(resp) { return resp.json() }) // Convert data to json
+    .then(function(data) {
+        div.innerHTML = "";
+        div.innerHTML += '<span>' + data.name + '</span><br/><span>Температура'+data.main.temp+'C<sup>0</sup></span><br/><span>Погода'
+        +data.weather[0].description+'</span>'
+      //console.log(data);
+      return div;
+    })
+    .catch(function() {
+      // catch any errors
+    });
+  }
+//
 let tablo = {
     'creatorView':`
     <!--<div class="descript">-->
@@ -71,6 +90,7 @@ let tablo = {
                     <div class="route"><span>${arr[i]._timeToStart}</span></div>
                     <div class="route"><span>${arr[i]._timeToEnd}</span></div>
                     <div class="route"><span>${arr[i]._price}</span></div>
+                    <div class="route"><div>${weatherBalloon(arr[i]._routes)}</div></div>
                     <div class="route"><button id="delBtn${i}" class="buttonsDel">Удалить</button></div>
                 </div>`  
             }
